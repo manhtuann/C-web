@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\bin\Debug\shareObjects.dll
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\bin\Debug\shareObjects.pdb
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\obj\Debug\shareObjects.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\obj\Debug\shareObjects.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\obj\Debug\shareObjects.dll
+C:\Users\Admin\source\repos\qlsv_7122020\shareObjects\obj\Debug\shareObjects.pdb

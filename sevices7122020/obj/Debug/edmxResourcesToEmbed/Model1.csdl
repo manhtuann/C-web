@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="qlsv1272020Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="maLop" />
+    </Key>
+    <Property Name="maLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maGVCN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="khoa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="chuyenNghanh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="soLuongSinhVien" Type="Int32" />
+    <Property Name="nienKhoa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="monHoc">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+    </Key>
+    <Property Name="maMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maMonTienQuyet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kyHoc" Type="Int32" />
+    <Property Name="soTinChi" Type="Int32" />
+    <Property Name="soTietLyThuyet" Type="Int32" />
+    <Property Name="soTietThucHanh" Type="Int32" />
+    <Property Name="monTuChon" Type="Byte" />
+    <Property Name="monChungChi" Type="Byte" />
+  </EntityType>
+  <EntityType Name="sinhvien">
+    <Key>
+      <PropertyRef Name="masv" />
+    </Key>
+    <Property Name="masv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hotensv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngaysinh" Type="DateTime" Precision="3" />
+    <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trangthai" Type="Byte" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sinhvien_lop">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+    </Key>
+    <Property Name="maMonHoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="masv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="phongHoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="thoiDiemBatDau" Type="DateTime" Precision="3" />
+    <Property Name="thoiDiemKetThuc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="qlsv1272020Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lops" EntityType="Self.Lop" />
+    <EntitySet Name="monHocs" EntityType="Self.monHoc" />
+    <EntitySet Name="sinhviens" EntityType="Self.sinhvien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="sinhvien_lop" EntityType="Self.sinhvien_lop" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(qlsv1272020Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(qlsv1272020Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

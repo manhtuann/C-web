@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\sevices7122020.dll.config
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\sevices7122020.dll
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\sevices7122020.pdb
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\shareObjects.dll
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\shareObjects.pdb
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\obj\Debug\sevices7122020.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\obj\Debug\sevices7122020.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\obj\Debug\sevices7122020.csproj.CopyComplete
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\obj\Debug\sevices7122020.dll
+C:\Users\Admin\source\repos\qlsv_7122020\sevices7122020\obj\Debug\sevices7122020.pdb
